@@ -3,7 +3,7 @@ import { NextResponse } from "next/server"
 export async function GET() {
   try {
     //const prometheusUrl = "http://localhost:9090/api/v1/query"
-    const prometheusUrl = "http://prometheus:9090/api/v1/query"
+    const prometheusUrl = "http://34.63.16.40:9090/api/v1/query"
 
 
     const queries = {

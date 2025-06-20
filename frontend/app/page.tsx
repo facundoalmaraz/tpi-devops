@@ -66,7 +66,7 @@ export default function ClimaPage() {
 
   const fetchHistorial = async () => {
     try {
-      const res = await fetch("http://localhost:8001/weather/history");
+      const res = await fetch("http://34.63.16.40:8001/weather/history");
       const data = await res.json();
       setHistory(data);
     } catch (err) {
@@ -86,7 +86,7 @@ export default function ClimaPage() {
 
     try {
       const res = await fetch(
-        `http://localhost:8001/weather?city=${encodeURIComponent(city)}`
+        `http://34.63.16.40:8001/weather?city=${encodeURIComponent(city)}`
       );
       if (!res.ok) {
         throw new Error("Ciudad no encontrada");
