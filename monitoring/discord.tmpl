@@ -1,0 +1,6 @@
+{{ define "discord.default.message" }}
+🚨 *{{ .CommonLabels.alertname }}*
+{{ range .Alerts }}
+• {{ .Annotations.summary }} ({{ .Labels.instance }})
+{{ end }}
+{{ end }}

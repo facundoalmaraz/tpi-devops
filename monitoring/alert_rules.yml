@@ -1,0 +1,22 @@
+groups:
+  - name: weather_alerts
+    rules:
+      - alert: HighWeatherRequestRate
+        expr: sum by(city) (weather_requests_total) > 10
+        for: 30s
+        labels:
+          severity: warning
+        annotations:
+          summary: "Alta cantidad de requests del clima en {{ $labels.city }}"
+          description: "Se están recibiendo muchas consultas para la ciudad {{ $labels.city }} (más de 10 en total)."
+
+  - name: test-alert
+    rules:
+      - alert: DiscordTestAlert
+        expr: vector(1)
+        for: 10s
+        labels:
+          severity: critical
+        annotations:
+          summary: "⚠️ Alerta de prueba"
+          description: "Esto es una prueba para verificar que Alertmanager notifique correctamente por Discord."
